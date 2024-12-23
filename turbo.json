@@ -1,0 +1,49 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "tasks": {
+        "check-types": {
+            "dependsOn": [
+                "build"
+            ]
+        },
+        "@luna/agent#check-types": {
+            "dependsOn": [
+                "@luna/plugin-solana#build",
+                "@luna/plugin-direct#build"
+            ]
+        },
+        "build": {
+            "outputs": [
+                "dist/**"
+            ],
+            "dependsOn": [
+                "^@luna/core#build"
+            ]
+        },
+        "@luna/plugin-solana#build": {
+            "outputs": [
+                "dist/**"
+            ],
+            "dependsOn": [
+                "@luna/plugin-trustdb#build"
+            ]
+        },
+        "@luna/plugin-nft-generation#build": {
+            "outputs": [
+                "dist/**"
+            ],
+            "dependsOn": [
+                "@luna/plugin-node#build"
+            ]
+        },
+        "luna-docs#build": {
+            "outputs": [
+                "build/**"
+            ]
+        },
+        "dev": {
+            "persistent": true,
+            "cache": false
+        }
+    }
+}
