@@ -1,0 +1,62 @@
+{
+    "name": "@luna/agent",
+    "version": "0.1.7-alpha.1",
+    "main": "src/index.ts",
+    "type": "module",
+    "scripts": {
+        "start": "node --loader ts-node/esm src/index.ts",
+        "dev": "node --loader ts-node/esm src/index.ts",
+        "check-types": "tsc --noEmit"
+    },
+    "nodemonConfig": {
+        "watch": [
+            "src",
+            "../core/dist"
+        ],
+        "ext": "ts,json",
+        "exec": "node --enable-source-maps --loader ts-node/esm src/index.ts"
+    },
+    "dependencies": {
+        "@luna/adapter-postgres": "workspace:*",
+        "@luna/adapter-redis": "workspace:*",
+        "@luna/adapter-sqlite": "workspace:*",
+        "@luna/client-auto": "workspace:*",
+        "@luna/client-direct": "workspace:*",
+        "@luna/client-discord": "workspace:*",
+        "@luna/client-farcaster": "workspace:*",
+        "@luna/client-lens": "workspace:*",
+        "@luna/client-telegram": "workspace:*",
+        "@luna/client-twitter": "workspace:*",
+        "@luna/client-slack": "workspace:*",
+        "@luna/core": "workspace:*",
+        "@luna/plugin-0g": "workspace:*",
+        "@luna/plugin-aptos": "workspace:*",
+        "@luna/plugin-bootstrap": "workspace:*",
+        "@luna/plugin-intiface": "workspace:*",
+        "@luna/plugin-coinbase": "workspace:*",
+        "@luna/plugin-conflux": "workspace:*",
+        "@luna/plugin-evm": "workspace:*",
+        "@luna/plugin-flow": "workspace:*",
+        "@luna/plugin-story": "workspace:*",
+        "@luna/plugin-goat": "workspace:*",
+        "@luna/plugin-icp": "workspace:*",
+        "@luna/plugin-image-generation": "workspace:*",
+        "@luna/plugin-nft-generation": "workspace:*",
+        "@luna/plugin-node": "workspace:*",
+        "@luna/plugin-solana": "workspace:*",
+        "@luna/plugin-starknet": "workspace:*",
+        "@luna/plugin-ton": "workspace:*",
+        "@luna/plugin-sui": "workspace:*",
+        "@luna/plugin-tee": "workspace:*",
+        "@luna/plugin-multiversx": "workspace:*",
+        "@luna/plugin-near": "workspace:*",
+        "@luna/plugin-zksync-era": "workspace:*",
+        "readline": "1.3.0",
+        "ws": "8.18.0",
+        "yargs": "17.7.2"
+    },
+    "devDependencies": {
+        "ts-node": "10.9.2",
+        "tsup": "8.3.5"
+    }
+}
